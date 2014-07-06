@@ -11,6 +11,7 @@ import Helpers._
 class HelloWorld {
   def services = renderIfNotAlreadyDefined(angular.module("HelloServices").factory("helloService", jsObjFactory()
     .string("pageLoadTime",new Date().toString)
+    .jsonCall("currentServerTime", Full(new Date().toString) )
   ))
 }
 
