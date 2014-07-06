@@ -1,5 +1,5 @@
-angular.module('HelloWorldApp', []).
+angular.module('HelloWorldApp', ['HelloServices']).
 
-controller('Hello', ['\$scope', function(\$scope) {
-  \$scope.pageLoadTime = "page load";
+controller('Hello', ['\$scope', 'helloService', function(\$scope, hello) {
+  \$scope.pageLoadTime = hello.pageLoadTime;
 }]);
