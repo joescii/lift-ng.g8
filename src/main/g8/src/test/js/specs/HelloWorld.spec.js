@@ -11,23 +11,35 @@ describe('HelloWorld App', function(){
     });
   });
 
-  beforeEach(inject(['$rootScope', '$controller', function($rootScope, $controller){
+  beforeEach(inject(['$rootScope', '$controller', '$q', function($rootScope, $controller, $q){
     rootScope = $rootScope;
     scope = $rootScope.$new();
 
     helloMock.pageLoadTime = "load time";
     helloMock.callCount = 0;
+    helloMock.serverTimeDefer = $q.defer();
     helloMock.currentServerTime = function() {
       this.callCount += 1;
-      return "server time";
+      return this.serverTimeDefer.promise;
     };
 
     $controller('Hello', { $scope: scope, helloService: helloMock })
   }]));
 
   describe('Hello Controller', function(){
-    it('should say hello', function() {
+    it('should set the pageLoadTime from the service', function() {
       expect(scope.pageLoadTime).toBe("load time");
+    });
+
+    it('should call the service\'s currentServerTime when checkTime() is invoked', function() {
+      scope.checkTime();
+      expect(helloMock.callCount).toBe(1);
+
+      helloMock.serverTimeDefer.resolve("new time");
+      // Allow the $q defer/promise to resolve
+      rootScope.$digest();
+
+      expect(scope.lastTime).toBe("new time");
     });
   });
 });
