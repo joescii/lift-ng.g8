@@ -41,5 +41,9 @@ describe('HelloWorld App', function(){
 
       expect(scope.lastTime).toBe("new time");
     });
+
+    it('should set the hello service on the scope so we can call toggleTicker', function() {
+      expect(scope.svc).toBe(helloMock);
+    });
   });
 });

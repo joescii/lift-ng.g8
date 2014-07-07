@@ -7,9 +7,12 @@
         <h2>Welcome to your project!</h2>
         <p>
           <div ng-controller="Hello">
+            <div data-lift="comet?type=HelloActor"></div>
             <div>Time at page load: <span ng-bind="pageLoadTime"></span></div>
             <div>Time on server at last check: <span ng-bind="lastTime"></span></div>
             <input type="button" value="Check" ng-click="checkTime()">
+            <div>Ticker time: <span ng-bind="ticker"></span></div>
+            <input type="button" value="Toggle ticker" ng-click="svc.toggleTicker()"/>
           </div>
         </p>
       </div>
