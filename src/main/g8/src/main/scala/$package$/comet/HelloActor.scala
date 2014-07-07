@@ -13,10 +13,7 @@ class HelloActor extends AngularActor { self =>
 
   override def lowPriority = {
     case "toggle" => activated = !activated
-    case "tick" => if(activated) {
-      println("ticking")
-      scope.assign("ticker", new Date().toString)
-    }
+    case "tick" => if(activated) scope.assign("ticker", new Date().toString)
   }
 
 }
