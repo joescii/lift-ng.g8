@@ -4,4 +4,5 @@
 
 EnvJasmine.loadGlobal(EnvJasmine.libDir + "/angular.js");
 EnvJasmine.loadGlobal(EnvJasmine.libDir + "/angular-mocks.js");
+EnvJasmine.loadGlobal(EnvJasmine.mocksDir + "/HelloServices.mock.js");
 EnvJasmine.loadGlobal(EnvJasmine.rootDir + "/HelloWorld.js");
