@@ -21,12 +21,11 @@ scalacOptions ++= Seq("-deprecation", "-unchecked")
 libraryDependencies ++= {
   val liftVersion = "$liftVersion$"
   val liftEdition = liftVersion.substring(0,3)
-  val ngVersion = "$ngVersion$"
   Seq(
     "net.liftweb"             %% "lift-webkit"                        % liftVersion           % "compile",
     "net.liftmodules"         %% ("lift-jquery-module_"+liftEdition)  % "2.4",
-    "net.liftmodules"         %% ("ng-js_"+liftEdition)               % ("0.1_"+ngVersion)    % "compile",
-    "net.liftmodules"         %% ("ng_"+liftEdition)                  % "0.4.5"               % "compile",
+    "net.liftmodules"         %% ("ng-js_"+liftEdition)               % "$liftngjsVersion$"    % "compile",
+    "net.liftmodules"         %% ("ng_"+liftEdition)                  % "$liftngVersion$"               % "compile",
     "org.eclipse.jetty"       % "jetty-webapp"                        % "8.1.7.v20120910"     % "container,test",
     "org.eclipse.jetty.orbit" % "javax.servlet"                       % "3.0.0.v201112011016" % "container,test" artifacts Artifact("javax.servlet", "jar", "jar"),
     "ch.qos.logback"          % "logback-classic"                     % "1.0.6",
