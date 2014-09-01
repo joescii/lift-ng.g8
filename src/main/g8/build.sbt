@@ -23,7 +23,7 @@ libraryDependencies ++= {
   val liftEdition = liftVersion.substring(0,3)
   Seq(
     "net.liftweb"             %% "lift-webkit"                        % liftVersion           % "compile",
-    "net.liftmodules"         %% ("lift-jquery-module_"+liftEdition)  % "2.4",
+    "net.liftmodules"         %% ("lift-jquery-module_"+liftEdition)  % "2.8",
     "net.liftmodules"         %% ("ng-js_"+liftEdition)               % "$liftngjsVersion$"    % "compile",
     "net.liftmodules"         %% ("ng_"+liftEdition)                  % "$liftngVersion$"               % "compile",
     "org.eclipse.jetty"       % "jetty-webapp"                        % "8.1.7.v20120910"     % "container,test",
