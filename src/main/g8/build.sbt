@@ -8,8 +8,7 @@ scalaVersion := "$scalaVersion$"
 
 resolvers ++= Seq(
   "snapshots"         at "https://oss.sonatype.org/content/repositories/snapshots",
-  "releases"          at "https://oss.sonatype.org/content/repositories/releases",
-  "CB Central Mirror" at "https://repo.cloudbees.com/content/groups/public"  // Location of Lift SNAPSHOT builds
+  "releases"          at "https://oss.sonatype.org/content/repositories/releases"
 )
 
 seq(webSettings :_*)
