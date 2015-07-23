@@ -15,7 +15,7 @@ describe('HelloWorld App', function(){
     rootScope = $rootScope;
     scope = $rootScope.$new();
 
-    helloMock.pageLoadTime = "load time";
+    helloMock.pageLoadTime = function() {return "load time"};
     helloMock.callCount = 0;
     helloMock.serverTimeDefer = $q.defer();
     helloMock.currentServerTime = function() {
